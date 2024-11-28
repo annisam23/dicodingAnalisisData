@@ -46,4 +46,3 @@ Akses aplikasi secara langsung melalui link berikut:
 
 ---
 
-Semoga README ini membantu Anda dalam memahami cara menjalankan dan mengelola proyek! 😊
