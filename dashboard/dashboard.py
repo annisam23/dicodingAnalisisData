@@ -63,7 +63,7 @@ def create_rfm_df(df):
 
 
 # load data
-all_df = pd.read_csv("https://raw.githubusercontent.com/annisam23/dicodingAnalisisData/dashboard/main_data.csv", low_memory=False, dtype={
+all_df = pd.read_csv("https://raw.githubusercontent.com/annisam23/dicodingAnalisisData/refs/heads/master/dashboard/main_data.csv", low_memory=False, dtype={
                      "product_length_cm": "object", "product_height_cm": "object", "product_width_cm": "object"})
 
 # pastikan datetime series
