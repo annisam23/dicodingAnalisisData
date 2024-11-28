@@ -85,8 +85,7 @@ max_date = all_df["order_approved_at"].max()
 st.header('Dashboard')
 
 with st.sidebar:
-    st.image("https://plus.unsplash.com/premium_photo-1675878786222-e578e7817527?auto=format&fit=crop&q=80&w=928&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", width=100)
-    st.title("Eccomerce Public")
+    st.title("E-commerce Dashboard")
 
     # mengambil start dan end date dari date input
     start_date, end_date = st.date_input(
@@ -134,7 +133,7 @@ ax.tick_params(axis='x', labelsize=15)
 st.pyplot(fig)
 
 # Product Review
-st.subheader("Best & Worst Reviewing Product Category")
+st.subheader("Kategori Produk Ulasan Terbaik & Terburuk")
 
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(35, 15))
 
@@ -144,7 +143,7 @@ sns.barplot(x="review_score", y="product_category_name_english",
             data=sum_order_items_df.head(5), palette=colors, ax=ax[0])
 ax[0].set_ylabel(None)
 ax[0].set_xlabel("Number of Sales", fontsize=30)
-ax[0].set_title("Best Reviewing Product", loc="center", fontsize=50)
+ax[0].set_title("Review produk Terbaik", loc="center", fontsize=50)
 ax[0].tick_params(axis='y', labelsize=35)
 ax[0].tick_params(axis='x', labelsize=30)
 
@@ -155,13 +154,13 @@ ax[1].set_xlabel("Number of Sales", fontsize=30)
 ax[1].invert_xaxis()
 ax[1].yaxis.set_label_position("right")
 ax[1].yaxis.tick_right()
-ax[1].set_title("Worst Reviewing Product", loc="center", fontsize=50)
+ax[1].set_title("Review Produk Terburuk", loc="center", fontsize=50)
 ax[1].tick_params(axis='y', labelsize=35)
 ax[1].tick_params(axis='x', labelsize=30)
 
 st.pyplot(fig)
 
-st.subheader("Customer Demographics")
+st.subheader("Demografi pelanggan")
 
 col1, col2 = st.columns(2)
 
@@ -177,7 +176,7 @@ with col1:
         palette=colors,
         ax=ax
     )
-    ax.set_title("Number of Customer by Payment", loc="center", fontsize=50)
+    ax.set_title("Jumlah Pelanggan Berdasarkan Pembayaran", loc="center", fontsize=50)
     ax.set_ylabel(None)
     ax.set_xlabel(None)
     ax.tick_params(axis='x', labelsize=35)
@@ -198,14 +197,14 @@ with col2:
         palette=colors,
         ax=ax
     )
-    ax.set_title("Number of Customer by State", loc="center", fontsize=50)
+    ax.set_title("Jumlah Nasabah Menurut Negara Bagian", loc="center", fontsize=50)
     ax.set_ylabel(None)
     ax.set_xlabel(None)
     ax.tick_params(axis='x', labelsize=35)
     ax.tick_params(axis='y', labelsize=30)
     st.pyplot(fig)
 
-st.subheader("Best Customer Based on RFM Parameters")
+st.subheader("Pelanggan Terbaik Berdasarkan Parameter RFM")
 
 col1, col2, col3 = st.columns(3)
 
